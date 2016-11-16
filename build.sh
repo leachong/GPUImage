@@ -2,13 +2,12 @@
 
 set -e
 
-IOSSDK_VER="10.0"
 
 # xcodebuild -showsdks
 
 cd framework
-xcodebuild -project GPUImage.xcodeproj -target GPUImage -configuration Release -sdk iphoneos${IOSSDK_VER} build
-xcodebuild -project GPUImage.xcodeproj -target GPUImage -configuration Release -sdk iphonesimulator${IOSSDK_VER} build
+xcodebuild -project GPUImage.xcodeproj -target GPUImage -configuration Release -sdk iphoneos build
+xcodebuild -project GPUImage.xcodeproj -target GPUImage -configuration Release -sdk iphonesimulator build
 cd ..
 
 cd build
@@ -31,5 +30,6 @@ ln -sfh Versions/Current/GPUImage GPUImage.framework/GPUImage
 ln -sfh Versions/Current/Headers GPUImage.framework/Headers
 
 # 
-cp Release-iphone/include/*.h ../../build/ios/include
-cp Release-iphone/lib/libGPUImage.a ../../build/ios/lib
+mkdir ../../build/ios/include/GPUImage
+cp Release-iphone/include/*.h ../../build/ios/include/GPUImage/
+cp Release-iphone/lib/libGPUImage.a ../../build/ios/lib/
