@@ -2,7 +2,7 @@
 
 set -e
 
-IOSSDK_VER="9.0"
+IOSSDK_VER="10.0"
 
 # xcodebuild -showsdks
 
@@ -29,3 +29,7 @@ cp Release-iphone/include/*.h GPUImage.framework/Versions/A/Headers
 ln -sfh A GPUImage.framework/Versions/Current
 ln -sfh Versions/Current/GPUImage GPUImage.framework/GPUImage
 ln -sfh Versions/Current/Headers GPUImage.framework/Headers
+
+# 
+cp Release-iphone/include/*.h ../../build/ios/include
+cp Release-iphone/lib/libGPUImage.a ../../build/ios/lib
