@@ -30,6 +30,6 @@ ln -sfh Versions/Current/GPUImage GPUImage.framework/GPUImage
 ln -sfh Versions/Current/Headers GPUImage.framework/Headers
 
 # 
-mkdir ../../build/ios/include/GPUImage
+mkdir -p ../../build/ios/include/GPUImage
 cp Release-iphone/include/*.h ../../build/ios/include/GPUImage/
 cp Release-iphone/lib/libGPUImage.a ../../build/ios/lib/
